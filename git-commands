@@ -1,0 +1,71 @@
+#git commands#
+
+#To know the git version installed
+git --version
+
+#To configure the global variables
+git config --global user.name "Thameem Rizvi"
+git config --global user.email "thamezriz@gmail.com"
+
+#To list the configured list
+git config --list
+
+#Creating git repository - We can create git repo by initializing our own repo or clone from remote repo
+#[It creates a hidden folder called .git where it will stores everything]
+#to initialize a specific directory/folder
+git init /project1
+git init . 
+
+#To know the status of the directory
+git status
+
+#To know the difference between previous file and the modified file before staging
+git diff
+
+#To know the difference between previous file and the modified file After staging
+git diff --staged
+
+#To add all the changes made to the staging area
+git add <File-name>
+git add .
+
+#To restore the staged file
+git restore --staged <FILE-NAME>
+
+#to commit the chnages from staging.
+git commit -m "COMMIT-MESSAGE"
+
+#To skip the staging and commit the change
+git commit -a -m "COMMIT_MESSAGE"
+
+#To go back to teh previous version or commit
+git checkout -- <FILE-NAME>
+
+#To see all the commits information
+git log
+git log --oneline
+
+#To untrack and ignore an already being tracked file
+git rm --cached <FILE-NAME>
+
+#To untrack and ignore file permamently. Fire the command and mention in .gitignore file
+#[Usually we do for log files which keep updating]
+git rm --cached <FILE-NAME>
+touch .gitignore
+vi gitignore
+error.log
+result.log
+*.log | #To ignore all .log files
+folder-name/
+
+#To remove a file [Git won't know this action]
+rm -rf <FILE-NAME>
+
+#To remove a file and also stage the changes [Informing the git]
+git rm -rf <FILE-NAME>
+
+#To move or rename a file
+mv <SOURCE-FILE-NAME> <DESTINATION-FILE-NAME>
+
+#To move/reanme a file and also stage the changes [Informing the git]
+git mv <SOURCE-FILE-NAME> <DESTINATION-FILE-NAME>
